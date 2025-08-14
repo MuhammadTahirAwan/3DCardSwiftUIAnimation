@@ -151,66 +151,6 @@ struct ContentView: View {
 }
 
 
-extension Comparable {
-    func clamped(to limits: ClosedRange<Self>) -> Self {
-        min(max(self, limits.lowerBound), limits.upperBound)
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .scaleEffect(0.8)
-//                .opacity(0.7)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//                .offset(x: -80)
-//
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .scaleEffect(0.6)
-//                .opacity(0.5)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//                .offset(x: -160)
-//
-//
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .scaleEffect(0.4)
-//                .opacity(0.3)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//                .offset(x: -240)
-//
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .scaleEffect(0.2)
-//                .opacity(0.1)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//                .offset(x: -320)
-
-
 
 
 struct GrayMeshBackground: View {

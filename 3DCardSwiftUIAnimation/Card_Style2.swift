@@ -128,12 +128,11 @@ struct Card_Style2: View {
                         Text("Orientation")
                             .foregroundStyle(.white)
                             .font(.system(size: 13, weight: .light, design: .default))
-                            .padding(.leading, 0)
+                            
                         
                         Text("Orbit around to see the depth of the card.")
                             .foregroundStyle(.black)
                             .font(.system(size: 13, weight: .light, design: .default))
-                            .padding(.leading, 0)
                             .padding(.top, 2)
                     }
                     

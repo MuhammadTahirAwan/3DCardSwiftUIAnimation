@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Card_Style2.swift
 //  3DCardSwiftUIAnimation
 //
 //  Created by Tahir Awan on 13/08/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Card_Style2: View {
     
     let images = (1...15)
     let angle: Angle = .degrees(45)
@@ -39,7 +39,25 @@ struct ContentView: View {
             RoundedRectangle(cornerRadius: 10.0)
             //                .fill(.black)
                 .foregroundStyle(
-                    .black.shadow(
+                    MeshGradient(
+                        width: 3,
+                        height: 3,
+                        points: [
+                            [0.0, 0.0], [0.5, 0.0], [1.0, 0.0],
+                            [0.0, 0.5], [0.5, 0.5], [1.0, 0.5],
+                            [0.0, 1.0], [0.5, 1.0], [1.0, 1.0]
+                        ], colors: [
+                            .white,
+                            .gray.opacity(0.8),
+                            .gray.opacity(0.6),
+                            .gray.opacity(0.4),
+                            .gray.opacity(0.7),
+                            .white,
+                            .gray.opacity(0.9),
+                            .gray.opacity(0.5),
+                            .white
+                        ]
+                    ).shadow(
                         .inner(color: .black, radius: 10, x: 0, y: 0)
                     )
                     
@@ -85,10 +103,10 @@ struct ContentView: View {
                         let xOffset = depthMultiplier * CGFloat(rotationY / 45) * 20
                         let yOffset = depthMultiplier * CGFloat(rotationX / 45) * 20
                         
-                        Image("pentagon--2")
+                        Image("pentagono-2")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 250, height: 250)
+                            .frame(width: 200, height: 200)
                             .scaleEffect(1 - CGFloat(index) * 0.06)
                             .opacity(1 - Double(index) * 0.08)
                         //.offset(y: CGFloat(index) * 5)
@@ -113,14 +131,16 @@ struct ContentView: View {
                             .padding(.leading, 0)
                         
                         Text("Orbit around to see the depth of the card.")
-                            .foregroundStyle(.gray)
+                            .foregroundStyle(.black)
                             .font(.system(size: 13, weight: .light, design: .default))
                             .padding(.leading, 0)
+                            .padding(.top, 2)
                     }
                     
                     Spacer()
                     
                 }.padding(.leading, 80)
+                    .padding(.top, 25)
                     .offset(y: -20)
             }
             
@@ -147,93 +167,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
-}
-
-
-extension Comparable {
-    func clamped(to limits: ClosedRange<Self>) -> Self {
-        min(max(self, limits.lowerBound), limits.upperBound)
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .scaleEffect(0.8)
-//                .opacity(0.7)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//                .offset(x: -80)
-//
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .scaleEffect(0.6)
-//                .opacity(0.5)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//                .offset(x: -160)
-//
-//
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .scaleEffect(0.4)
-//                .opacity(0.3)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//                .offset(x: -240)
-//
-//            Image("pentagon-")
-//                .resizable()
-//                .frame(width: 250, height: 250)
-//                .scaleEffect(0.2)
-//                .opacity(0.1)
-//                .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
-//                .offset(x: -320)
-
-
-
-
-struct GrayMeshBackground: View {
-    var body: some View {
-        MeshGradient(
-            width: 3,
-            height: 3,
-            points: [
-                [0.0, 0.0], [0.5, 0.0], [1.0, 0.0],
-                [0.0, 0.5], [0.5, 0.5], [1.0, 0.5],
-                [0.0, 1.0], [0.5, 1.0], [1.0, 1.0]
-            ], colors: [
-                .black,
-                .gray.opacity(0.8),
-                .gray.opacity(0.6),
-                .gray.opacity(0.4),
-                .gray.opacity(0.7),
-                .black.opacity(0.65),
-                .gray.opacity(0.9),
-                .gray.opacity(0.5),
-                .black
-            ]
-        )
-        .ignoresSafeArea() // covers the whole screen
-    }
+    Card_Style2()
 }
